@@ -1,0 +1,61 @@
+{% load static %}
+{% include 'main.html' %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            MATRIXX GYM | HOME
+        </title>
+        <style>
+            h1{
+                
+                align-items: center;
+                padding-left: 36px;
+                
+            }
+            
+            a:hover{
+                border-radius: 12px;
+                color: rgb(211, 197, 201);
+                background-color: blue;
+            }
+            body{
+                background: url("{%static 'bg.jpg' %}");
+                padding-left: 0%;
+               
+            }
+            #enroll{
+                float: left;
+                background-color: aqua;
+                border-radius: 36px;
+                width: 56%;
+            }
+            #room{
+                float: right;
+                margin-right: 40%;
+                background-color: aqua;
+                border-radius: 36px;
+                width: 106%;
+            }
+            table{
+                margin-top: 90px;
+            }
+            td{
+                padding-left: 0%;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td>
+                 <h1 id="enroll"><a href="{% url 'enroll' %}">ENROLLMENT</a></h1>
+                </td>
+                <td>
+                 <h1 id="room"> <a href="{% url 'room' %}">ROOMS</a></h1>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,138 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> gym rooms</title>
+        <style>
+            #body{
+                align-items: center;
+                margin-top: 0%;
+                margin-left: 0%;
+                align-content: center;
+                padding: 12px;
+            }
+            th{
+                color: rgb(230, 223, 223);
+                font-size: large;
+                background-color: rgb(24, 22, 22);
+                padding: 12px;
+            }
+            a{
+                padding-right: 6px;
+                font-weight: bold;
+                color: black;
+                border-radius: 6px;
+                text-align: center;
+                margin-left: 0%;
+                margin-top: 36%;
+
+            }
+            a:hover{
+                color: rgb(3, 3, 3);
+                background-color: rgb(201, 39, 93);
+            }
+            table{
+                margin-left: 16%;
+            }
+        </style>
+    </head>
+    {% include 'main.html' %}
+    {% block content  %}
+<body id="body">
+<table border="2" width="75%" >
+    <tr>
+        <th colspan="6">ROOM Z PARCIPANTS(BIGINERS) </th>
+    </tr>
+    <tr>
+        <th width="2.3%">S/N</th>
+        <th width="2.3%">first name</th>
+        <th width="3%">gender </th>
+        <th width="3%">phone</th>
+        <th width="3%">course</th>
+        <th width="3%">room</th>
+
+    </tr>
+</table>
+{% for r in roomz %}
+<table border="2" width="75%">
+    <tr>
+        <td width="3.2%">{{r.id}}</td>
+        <td width="3.5%">{{r.fname}}</td>
+        <td width="3%">{{r.gender}}</td>
+        <td width="3%">{{r.phone}} </td>
+        <td width="3%">{{r.course}} </td>
+        <td width="3%" >{{r.room}}</td>
+    </tr>
+    
+   {% endfor %} 
+
+</table>
+<br>
+<br>
+<hr>
+<table border="2" width="75%" >
+    <tr>
+        <th colspan="6"> ROOM Y PARCIPANTS(INTERMIDEATE) </th>
+    </tr>
+    <tr>
+        <th width="2.3%">S/N</th>
+        <th width="2.3%">first name</th>
+        <th width="3%">gender </th>
+        <th width="3%">phone</th>
+        <th width="3%">course</th>
+        <th width="3%">room</th>
+
+    </tr>
+</table>
+{% for ry in roomy %}
+<table border="2" width="75%">
+    <tr>
+        <td width="3.2%">{{ry.id}}</td>
+        <td width="3.5%">{{ry.fname}}</td>
+        <td width="3%">{{ry.gender}}</td>
+        <td width="3%">{{ry.phone}} </td>
+        <td width="3%">{{ry.course}} </td>
+        <td width="3%" >{{ry.room}}</td>
+    </tr>
+    
+   {% endfor %} 
+
+</table>
+<br>
+<br>
+<hr>
+<table border="2" width="75%" >
+    <tr>
+        <th colspan="6"> ROOM X PARCIPANTS (ADVANCED)</th>
+    </tr>
+    <tr>
+        <th width="2.3%">S/N</th>
+        <th width="2.3%">first name</th>
+        <th width="3%">gender </th>
+        <th width="3%">phone</th>
+        <th width="3%">course</th>
+        <th width="3%">room</th>
+
+    </tr>
+</table>
+{% for rx in roomx %}
+<table border="2" width="75%">
+    <tr>
+        <td width="3.2%">{{rx.id}}</td>
+        <td width="3.5%">{{rx.fname}}</td>
+        <td width="3%">{{rx.gender}}</td>
+        <td width="3%">{{rx.phone}} </td>
+        <td width="3%">{{rx.course}} </td>
+        <td width="3%" >{{rx.room}}</td>
+    </tr>
+    
+   {% endfor %} 
+
+</table>
+
+{% endblock content %}
+    </body>
+
+</html>

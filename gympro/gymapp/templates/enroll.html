@@ -1,0 +1,131 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>MATRIXX GYM</title>
+    <style>
+#fname,#email,#gender,#phone,#course,#room,#price{
+    align-items: baseline;
+    text-align: left;
+    position:relative;
+    padding: 1px;
+    margin-left:5%;
+}
+.container{
+    background-color: rgb(61, 61, 212);
+    margin-left: 28%;
+    margin-right: 5%;
+    margin-top: 0%;
+    text-align: center;
+    position: absolute;
+    width: 45%;
+    opacity: 0.9;
+    
+}
+.input-field,.inputs {
+    width: 80%;
+    padding: 10px;
+    outline: none;
+  }
+#dbody{
+    background-image:url("{%static 'bg.jpg' %}");
+    background-attachment: fixed;
+    
+    
+}
+.btn {
+    background-color: dodgerblue;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+    opacity: 1;
+  }
+.btn:hover{
+    background-color: red;
+    text-transform: capitalize;
+    font-stretch:extra-expanded;
+    opacity: 0.9;
+}
+    </style>
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+{% include 'main.html' %}
+<body id="dbody">
+    <div class="container">
+        <div class="header">
+            <h2>ENROLLMENT FORM</h2>
+        </div>
+        <hr>
+       {% block content  %}
+        <form action="" method="POST" enctype='multipart/form-data'>
+            {%csrf_token %}
+           
+            <h3>BASIC DETAILS </h3>
+            <div id="fname">
+                <p><i class="fa fa-user icon"></i><input class="input-field" type="text" name="fname" placeholder="enter the name to enroll " required></p>
+            </div>
+            <div  id="gender" >
+                
+                <p><i class="fa fa-user icon"></i>
+                    <select class="input-field" name="gender">
+                        <option >Male</option>
+                        <option >Female</option>
+                    </select></p>
+                </div>
+            <div  id="email" >
+                
+            <p ><i class="fa fa-envelope icon"></i><input class="input-field" type="email" name="email"placeholder="Enter the email" required></p>
+            </div>
+            <div  id="phone" >
+                
+                <p ><i class="fa fa-phone icon"></i><input class="input-field" type="number" name="phone"placeholder="Enter the phone number" required></p>
+            </div>
+            <hr>
+            <h3>COURSES OFFERED</h3>
+            <div  id="phone" >
+                
+                <p><i class="fa fa-user icon"></i>
+                    <select class="input-field" name="course">
+                        <option >spinning</option>
+                        <option >pilates</option>
+                        <option >yoga</option>
+                        <option >keeping fit</option>
+                    </select></p>
+            </div>
+            <hr>
+            <h3>ROOMS AVAILABLE </h3>
+            <div  id="phone" >
+                
+                <p><i class="fa fa-house icon"></i>
+                    <select class="input-field" name="room">
+                        <option >roomX</option>
+                        <option >roomY</option>
+                        <option >roomZ</option>
+                    </select></p>
+            </div>
+                <hr>
+            <h3>PRICE PER CLASS</h3>
+            <div  id="phone" >
+                
+                <p ><i class="fa fa-money icon"></i><input class="input-field" type="number" name="price"placeholder="Enter the fees amount" required></p>
+            </div>
+            <br>
+            <br>
+            <br>
+            <button class="btn" type="submit" name="register" >ENROLL</button>
+        <hr>
+             
+            </div>
+         
+        </form>
+        </div>
+
+        </div>
+        {% endblock content %}
+
+</body>
+</html>
